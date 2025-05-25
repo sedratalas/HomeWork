@@ -14,5 +14,4 @@ class ProductRepository {
     return productService.getCart();
   }
 
-// لاحقاً ممكن تضيف getProductById أو updateQuantity هون
 }
