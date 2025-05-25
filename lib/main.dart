@@ -2,35 +2,19 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:intro_to_state_managment/state_not_update10/logic/cubit/counter_cubit.dart';
+import 'package:intro_to_state_managment/state_not_update10/logic/cubit/internet_cubit.dart';
+import 'package:intro_to_state_managment/state_not_update10/logic/cubit/setting_cubit.dart';
+import 'package:intro_to_state_managment/state_not_update10/presentation/router/app_router.dart';
+import 'package:intro_to_state_managment/state_not_update10/presentation/screen/home_screen.dart';
 import 'package:intro_to_state_managment/view/cart/remote_cart_page.dart';
 import 'package:intro_to_state_managment/view/clock_page.dart';
 import 'package:intro_to_state_managment/view/comment_page.dart';
 import 'package:intro_to_state_managment/view/product_page.dart';
-
-// void main() {
-//   runApp(
-//       DevicePreview(
-//      builder: (context) {
-//       return const MyApp();
-//     }
-//   ));
-// }
-//
-//
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return  MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       home: CommentPage(),
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:path_provider/path_provider.dart';
@@ -192,3 +176,54 @@ class LogInPage extends StatelessWidget {
     );
   }
 }
+// void main() {
+//   // final a = MyClass(value: 1);
+//   // final b = MyClass(value: 2);
+//
+//   // print('a == b ' + (a == b).toString());
+//
+//   // print('a == a ' + (a == a).toString());
+//   // print('b == b ' + (b == b).toString());
+//
+//   runApp(MyApp(
+//     appRouter: AppRouter(),
+//     connectivity: Connectivity(),
+//   ));
+// }
+//
+// class MyApp extends StatelessWidget {
+//   final AppRouter appRouter;
+//   final Connectivity connectivity;
+//
+//   const MyApp({
+//     Key? key,
+//     required this.appRouter,
+//     required this.connectivity,
+//   }) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext myAppContext) {
+//     return MultiBlocProvider(
+//       providers: [
+//         BlocProvider<InternetCubit>(
+//           create: (internetCubitContext) =>
+//               InternetCubit(connectivity: connectivity),
+//         ),
+//         BlocProvider<CounterCubit>(
+//           create: (counterCubitContext) => CounterCubit(),
+//         ),
+//         BlocProvider<SettingsCubit>(
+//           create: (counterCubitContext) => SettingsCubit(),
+//         ),
+//       ],
+//       child: MaterialApp(
+//         title: 'Flutter Demo',
+//         theme: ThemeData(
+//           primarySwatch: Colors.blue,
+//           visualDensity: VisualDensity.adaptivePlatformDensity,
+//         ),
+//         onGenerateRoute: appRouter.onGenerateRoute,
+//       ),
+//     );
+//   }
+// }
