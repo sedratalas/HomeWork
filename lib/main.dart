@@ -1,20 +1,11 @@
 
 import 'dart:async';
 import 'dart:math';
-
-import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:intro_to_state_managment/state_not_update10/logic/cubit/counter_cubit.dart';
-import 'package:intro_to_state_managment/state_not_update10/logic/cubit/internet_cubit.dart';
-import 'package:intro_to_state_managment/state_not_update10/logic/cubit/setting_cubit.dart';
-import 'package:intro_to_state_managment/state_not_update10/presentation/router/app_router.dart';
-import 'package:intro_to_state_managment/state_not_update10/presentation/screen/home_screen.dart';
+import 'package:intro_to_state_managment/riverpod/riverpod_counter.dart';
 import 'package:intro_to_state_managment/view/cart/remote_cart_page.dart';
-import 'package:intro_to_state_managment/view/clock_page.dart';
-import 'package:intro_to_state_managment/view/comment_page.dart';
-import 'package:intro_to_state_managment/view/product_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:path_provider/path_provider.dart';
@@ -24,9 +15,26 @@ import 'auth/bloc/login_bloc.dart';
 import 'config.dart';
 import 'model/user_model.dart';
 import 'view/prev_session.dart';
+//RIVER POD MAIN
+void main() {
+  runApp(
+    ProviderScope(
+      child: MyApp(),
+    ),
+  );
+}
 
-
-Future<void> main() async {
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Riverpod Counter',
+      home: RiverpodCounter(),
+    );
+  }
+}
+//BLOC MAIN
+/*Future<void> main() async {
   Bloc.observer = MyBlocObserver();  runApp(const App());
   // WidgetsFlutterBinding.ensureInitialized();
   // final storage = await HydratedStorage.build(
@@ -175,7 +183,7 @@ class LogInPage extends StatelessWidget {
       ),
     );
   }
-}
+}*/
 // void main() {
 //   // final a = MyClass(value: 1);
 //   // final b = MyClass(value: 2);
