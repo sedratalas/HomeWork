@@ -8,33 +8,33 @@ class ErrorData extends ResultData{
   });
 }
 class LoginModel extends ResultData{
-  String usename;
+  String username;
   String password;
   LoginModel({
-    required this.usename,
+    required this.username,
     required this.password,
   });
 
   LoginModel copyWith({
-    String? usename,
+    String? username,
     String? password,
   }) {
     return LoginModel(
-      usename: usename ?? this.usename,
+      username: username ?? this.username,
       password: password ?? this.password,
     );
   }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'username': usename,
+      'username': username,
       'password': password,
     };
   }
 
   factory LoginModel.fromMap(Map<String, dynamic> map) {
     return LoginModel(
-      usename: map['username'] as String,
+      username: map['username'] as String,
       password: map['password'] as String,
     );
   }
@@ -44,17 +44,17 @@ class LoginModel extends ResultData{
   factory LoginModel.fromJson(String source) => LoginModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
-  String toString() => 'UserModel(username: $usename, password: $password)';
+  String toString() => 'UserModel(username: $username, password: $password)';
 
   @override
   bool operator ==(covariant LoginModel other) {
     if (identical(this, other)) return true;
 
     return
-      other.usename == usename &&
+      other.username == username &&
           other.password == password;
   }
 
   @override
-  int get hashCode => usename.hashCode ^ password.hashCode;
+  int get hashCode => username.hashCode ^ password.hashCode;
 }

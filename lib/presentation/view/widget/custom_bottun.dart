@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
    CustomButton(
        {Key? key,
-         required this.text,
+          this.text,
          this.color,
          this.width,
          this.height,
@@ -11,7 +11,7 @@ class CustomButton extends StatelessWidget {
 late double? width;
 double? height;
 Color? color;
-Text text;
+Text? text;
    late double ScreenWidth;
    late double ScreenHeight;
   @override

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:zamzam_app/presentation/view/login/login_screen.dart';
+import 'package:zamzam_app/presentation/view/signup/signup_screen.dart';
 import 'package:zamzam_app/presentation/view/widget/custom_bottun.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -51,34 +53,48 @@ late double ScreenHeight;
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: CustomButton(
-                          color: Colors.white,
-                          text: Text("CREATE AN ACCOUNT",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 14,
-                              color: Color(0xff2E2E2E),
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context)=> SignupScreen())
+                          );
+                        },
+                        child: CustomButton(
+                            color: Colors.white,
+                            text: Text("CREATE AN ACCOUNT",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 14,
+                                color: Color(0xff2E2E2E),
+                              ),
                             ),
-                          ),
+                        ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: ScreenWidth*(318/375),
-                        height: ScreenHeight*(60/812),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 1,
-                          ),
-                        ),
-                        child: Center(
-                          child: Text("LOGIN",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 14,
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context)=> LoginScreen())
+                          );
+                        },
+                        child: Container(
+                          width: ScreenWidth*(318/375),
+                          height: ScreenHeight*(60/812),
+                          decoration: BoxDecoration(
+                            border: Border.all(
                               color: Colors.white,
+                              width: 1,
+                            ),
+                          ),
+                          child: Center(
+                            child: Text("LOGIN",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 14,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
